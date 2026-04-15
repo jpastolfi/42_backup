@@ -1,0 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/15 17:33:23 by jastolfi          #+#    #+#             */
+/*   Updated: 2026/04/15 17:37:24 by jastolfi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stddef.h>
+
+int		ft_atoi(const char *nptr);
+void	ft_bzero(void *b, size_t len); // OK
+void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_isalnum(int c); // OK
+int		ft_isalpha(int c); // OK
+int		ft_isascii(int c); // OK
+int		ft_isdigit(int c); // OK
+int		ft_isprint(int c); // OK
+char	*ft_itoa(int n, char *buffer, int radix);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n); // OK
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memset(void *s, int c, size_t n); // OK
+// ft_putchar_fd.c
+// ft_putendl_fd.c
+// ft_putnbr_fd.c
+// ft_putstr_fd.c
+// ft_split.c
+char	*ft_strchr(const char *s, int c); // OK
+char	*ft_strdup(const char *s);
+// ft_striteri.c
+// ft_strjoin.c
+size_t	ft_strlcat(char *dst, const char *src, size_t size); // OK
+size_t	ft_strlcpy(char *dst, const char *src, size_t size); // OK
+size_t	ft_strlen(const char *s); // OK
+// ft_strmapi.c
+int		ft_strncmp(const char *s1, const char *s2, size_t n); // OK
+// ft_strnstr.c
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strtrim(char *s);
+// ft_substr.c
+int		ft_tolower(int c); // OK
+int		ft_toupper(int c); // OK
+
+#endif
