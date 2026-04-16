@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:34 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:41:43 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:02:30 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	index = 0;
 	while (s[index])
 	{
-		// printf("%p\n", &s[index]);
+		// printf("A letra %c esta no endereco %p\n", s[index], &s[index]);
 		if (s[index] == c)
 		{
 			p = (char *) &s[index];

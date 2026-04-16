@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:33:23 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:37:24 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:42:31 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size); // OK
 size_t	ft_strlen(const char *s); // OK
 // ft_strmapi.c
 int		ft_strncmp(const char *s1, const char *s2, size_t n); // OK
-// ft_strnstr.c
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char *s);
 // ft_substr.c
