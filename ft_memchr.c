@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 16:57:20 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 12:08:30 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:10:01 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	index = 0;
 	while (index < n)
 	{
-		/* printf("ptr[index]: %p\n", &ptr[index]); */
 		if (ptr[index] == to_match)
 		{
-			return (&ptr[index]);
+			return ((void *)&ptr[index]);
 		}
 		index++;
 	}
