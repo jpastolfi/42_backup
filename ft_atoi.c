@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:32:24 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 18:13:37 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:14:08 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 
 /* int static putnbr(char c)
 {
@@ -21,11 +22,11 @@
 	return (n);
 } */
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int index;
-	int total;
-	int signal = 1;
+	int		index;
+	long	total;
+	int		signal;
 
 	index = 0;
 	total = 0;
@@ -34,20 +35,27 @@ int ft_atoi(const char *nptr)
 	{
 		index++;
 	}
-	if (nptr[index] == 45)
+	if (nptr[index] == '-' || nptr[index] == '+')
 	{
-		signal = -1;
+		if (nptr[index] == '-')
+			signal = -1;
 		index++;
 	}
 	while (nptr[index] >= '0' && nptr[index] <= '9')
 	{
+		if (total * 10 > INT_MAX || total * 10 < INT_MIN)
+			return (0);
 		total = (total * 10) + nptr[index] - '0';
 		index++;
 	}
-	return (total * signal);
+	return ((int)(total * signal));
 }
 
 /* int main(void)
 {
-	printf("ft_atoi(\"        -123 \"): %d", ft_atoi("        -123 "));
+	printf("ft_atoi(+42lisboa): %d\n", ft_atoi("+42lisboa"));
+	printf("ft_atoi(-+42): %d\n", ft_atoi("-+42"));
+	printf("ft_atoi(+-42): %d\n", ft_atoi("+-42"));
+	printf("ft_atoi(++INT_MAX): %d\n", ft_atoi("999999999999999999"));
+	printf("ft_atoi(--INT_MIN): %d\n", ft_atoi("-999999999999999999"));
 } */

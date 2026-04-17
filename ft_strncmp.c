@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:49:15 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:35:49 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 16:13:53 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			break ;
 		}
 	}
-	return (s1[index] - s2[index]);
+	return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 }
 
 /* int main() {
@@ -43,4 +43,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	char thrd[] = "Fire";
 	char frth[] = "Fi";
 	printf("%d\n", ft_strncmp(thrd, frth, 3));
+	char fifth[] = "test";
+	char sixth[] = "test";
+	sixth[3] = -128;
+	printf("%d\n", ft_strncmp(fifth, sixth, 4));
+	sixth[3] = -42;
+	printf("%d\n", ft_strncmp(fifth, sixth, 4));
 } */

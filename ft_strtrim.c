@@ -6,8 +6,10 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:49 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:42:49 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:49:22 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char 	*ft_strtrim(char const *s1, char const *set);

@@ -6,8 +6,13 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:29 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:41:29 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:50:23 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void 	ft_putstr_fd(char *s, int fd)
+{
+
+}

@@ -6,8 +6,13 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:32 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:41:32 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:49:33 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char 	**ft_split(char const *s, char c)
+{
+
+}

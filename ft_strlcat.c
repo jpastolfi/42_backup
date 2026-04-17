@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 12:49:16 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:42:03 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 16:59:55 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	index;
 	size_t	dst_len;
+	size_t	src_len;
 
 	index = 0;
 	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dst_len >= size)
+		return (size + src_len);
 	while (src[index] && dst_len + index + 1 < size)
 	{
 		dst[dst_len + index] = src[index];
 		index++;
 	}
 	dst[dst_len + index] = '\0';
-	return (ft_strlen(dst));
+	return (dst_len + src_len);
 }
-
-/* int  main(void)
-{
-	char dest[] = "Batata";
-	char src[] = "Tomate";
-	size_t size = 9;
-	printf("dest antes: %s\n", dest);
-	printf("src antes: %s\n", src);
-	printf("Final length: %zu\n", ft_strlcat(dest, src, size));
-	printf("dest depois: %s\n", dest);
-	printf("src depois: %s\n", src);
-} */

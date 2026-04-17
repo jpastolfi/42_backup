@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:34 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:30:06 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:12:02 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,17 @@ char	*ft_strchr(const char *s, int c)
 	index = 0;
 	while (s[index])
 	{
-		if (s[index] == c)
+		if (s[index] == (unsigned char)c)
 		{
 			p = (char *) &s[index];
 			return (p);
 		}
 		index++;
+	}
+	if (s[index] == c)
+	{
+		p = (char *) &s[index];
+		return (p);
 	}
 	return (NULL);
 }

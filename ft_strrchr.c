@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:37 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:29:36 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 16:03:11 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int		len;
-	int		index;
 	char	*p;
 
-	len = ft_strlen(s) - 1;
+	len = ft_strlen(s);
 	while (len >= 0)
 	{
-		if (s[len] == c)
+		if (s[len] == (unsigned char)c)
 		{
 			p = (char *) &s[len];
 			return (p);
@@ -34,7 +33,6 @@ char	*ft_strrchr(const char *s, int c)
 
 /* int main(void)
 {
-	char s[] = "ABCDEF";
-	char c = 'C';
-	printf("%p\n", ft_strrchr(s, c));
+	printf("%p\n", ft_strrchr("ABCDEF", 'C'));
+	printf("%p\n", ft_strrchr("", 0));
 } */

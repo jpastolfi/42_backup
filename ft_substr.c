@@ -6,8 +6,14 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:52 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:42:52 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:46:32 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char *ft_substr(char const *s, unsigned int start,
+size_t len)
+{
+
+}

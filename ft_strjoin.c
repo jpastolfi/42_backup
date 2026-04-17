@@ -6,8 +6,10 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:54 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:41:55 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:49:11 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char 	*ft_strjoin(char const *s1, char const *s2);

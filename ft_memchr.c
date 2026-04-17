@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 16:57:20 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:10:01 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:08:02 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t index;
-	unsigned char *ptr;
-	unsigned char to_match;
+	size_t			index;
+	unsigned char	*ptr;
+	unsigned char	to_match;
 
 	ptr = (unsigned char *) s;
 	to_match = (unsigned char) c;

@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 16:55:27 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 12:05:05 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:38:15 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,33 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t			index;
 	unsigned char	*dest_ptr;
 	unsigned char	*src_ptr;
-	unsigned char	temp[n];
 
 	index = 0;
 	dest_ptr = (unsigned char *) dest;
 	src_ptr = (unsigned char *) src;
-	while (index < n)
+	if (dest_ptr < src_ptr)
 	{
-		temp[index] = src_ptr[index];
-		index++;
+		while (index < n)
+		{
+			dest_ptr[index] = src_ptr[index];
+			index++;
+		}
 	}
-	temp[index] = '\0';
-	index = 0;
-	while (index < n)
+	else
 	{
-		dest_ptr[index] = temp[index];
-		index++;
+		while (n > 0)
+		{
+			dest_ptr[n - 1] = src_ptr[n - 1];
+			n--;
+		}
 	}
-	return (dest);
+	return ((void *)dest_ptr);
 }
 
 /* int main(void)
 {
-	char dest[] = "Batata";
-	char src[] = "Tomate";
+	char *dest = "Batata";
+	char *src = "Tomate";
 	printf("dest before: %s\n", dest);
 	printf("src before: %s\n", src);
-	ft_memmove(&dest, &src, 2);
-	printf("dest after: %s\n", dest);
-	printf("src after: %s\n", src);
-
-	char arr[] = "ABCDE";
-
-    printf("before: %s\n", arr);
-    ft_memmove(arr, arr + 2, 3);
-    printf("after:  %s\n", arr);
 } */

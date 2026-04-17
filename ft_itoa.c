@@ -6,8 +6,13 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 19:28:10 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:28:21 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:49:43 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_itoa(int n, char *buffer, int radix)
+{
+
+}

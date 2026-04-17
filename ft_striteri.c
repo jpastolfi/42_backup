@@ -6,8 +6,14 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:51 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:41:52 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:50:02 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void 	ft_striteri(char *s, void (*f)(unsigned int,
+char*))
+{
+
+}

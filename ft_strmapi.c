@@ -6,8 +6,14 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:24 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/15 17:42:24 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:49:54 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char 	*ft_strmapi(char const *s, char (*f)(unsigned
+int, char))
+{
+
+}

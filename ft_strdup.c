@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 11:56:38 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/16 19:28:51 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:14:26 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <stdio.h>
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s)
 {
 	int		index;
 	char	*str;
 
 	index = 0;
-	while (src[index] != '\0')
+	while (s[index] != '\0')
 	{
 		index++;
 	}
@@ -28,9 +28,9 @@ char	*ft_strdup(char *src)
 	if (str == 0)
 		return (NULL);
 	index = 0;
-	while (src[index] != '\0')
+	while (s[index] != '\0')
 	{
-		str[index] = src[index];
+		str[index] = s[index];
 		index++;
 	}
 	str[index] = '\0';

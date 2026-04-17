@@ -33,14 +33,25 @@ FILES= \
 		ft_strnstr.c\
 		ft_memchr.c\
 		ft_strchr.c\
-		ft_strrchr.c
+		ft_strrchr.c\
+		ft_substr\
+		ft_strjoin\
+		ft_strtrim\
+		ft_split\
+		ft_itoa\
+		ft_strmapi\
+		ft_striteri\
+		ft_putchar_fd\
+		ft_putstr_fd\
+		ft_putendl_fd\
+		ft_putnbr_fd
 OBJS=${FILES:.c=.o}
 NAME=libft.a
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} $<
+	ar rcs ${NAME} $^
 
 %.o:%.c
 	cc  -c ${FLAGS} $< -o $@
