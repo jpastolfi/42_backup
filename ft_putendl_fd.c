@@ -6,13 +6,13 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:24 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/17 18:50:32 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/20 12:04:16 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	ft_putendl_fd(char *s, int fd)
+/* void 	ft_putendl_fd(char *s, int fd)
 {
 
-}
+} */

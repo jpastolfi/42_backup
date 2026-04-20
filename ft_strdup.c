@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 11:56:38 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/17 18:14:26 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/20 12:56:21 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(const char *s)
 	{
 		index++;
 	}
-	str = malloc(index);
+	str = malloc(index + 1);
 	if (str == 0)
 		return (NULL);
 	index = 0;

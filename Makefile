@@ -34,17 +34,17 @@ FILES= \
 		ft_memchr.c\
 		ft_strchr.c\
 		ft_strrchr.c\
-		ft_substr\
-		ft_strjoin\
-		ft_strtrim\
-		ft_split\
-		ft_itoa\
-		ft_strmapi\
-		ft_striteri\
-		ft_putchar_fd\
-		ft_putstr_fd\
-		ft_putendl_fd\
-		ft_putnbr_fd
+		ft_substr.c\
+		ft_strjoin.c\
+		ft_strtrim.c\
+		ft_split.c\
+		ft_itoa.c\
+		ft_strmapi.c\
+		ft_striteri.c\
+		ft_putchar_fd.c\
+		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c
 OBJS=${FILES:.c=.o}
 NAME=libft.a
 
