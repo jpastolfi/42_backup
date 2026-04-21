@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:34 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/20 14:48:24 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:02:00 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-int main(void)
+/* int	main(void)
 {
-	// char haystack[30] = "aaabcabcd";
-	// printf("Result: %s\n", ft_strnstr("abcccccdef", "cd", 8));
-	// printf("Result: %s\n", ft_strnstr(haystack, "a", 1));
+	char haystack[30] = "aaabcabcd";
+	printf("Result: %s\n", ft_strnstr("abcccccdef", "cd", 8));
+	printf("Result: %s\n", ft_strnstr(haystack, "a", 1));
 	printf("%s\n", ft_strnstr("    Batata   aaa  ", "Batata", 15));
-}
+} */

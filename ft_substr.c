@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:52 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/20 12:55:30 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:02:31 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t len)
 	char	*subs;
 
 	s_len = ft_strlen(s);
-
 	if (start >= s_len)
 		return (ft_strdup(""));
 	if (len > s_len - start)

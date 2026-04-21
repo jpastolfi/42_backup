@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:41:32 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/20 19:34:54 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:15:10 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,68 +14,87 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *malloca(char const *s, unsigned int start, size_t len)
+static int	find_start(char const *s, char c, int start)
 {
-	char *result;
-
-	result = ft_substr(s, start, len);
-	return (result);
+	while (s[start])
+	{
+		if (s[start] != c)
+			return (start);
+		start++;
+	}
+	return (start);
 }
 
-int count_words(char const *s, char c)
+static int	find_end(char const *s, char c, int start)
 {
-	int index;
-	int total;
+	while (s[start])
+	{
+		if (s[start] == c)
+			return (start);
+		start++;
+	}
+	return (start);
+}
+
+static int	count_words(char const *s, char c)
+{
+	int	start;
+	int	end;
+	int	counter;
+
+	start = 0;
+	counter = 0;
+	while (s[start])
+	{
+		start = find_start(s, c, start);
+		end = find_end(s, c, start);
+		if (!s[start])
+			break ;
+		else
+			counter++;
+		start = end++;
+	}
+	return (counter);
+}
+
+static char	**free_all(char **result, int counter)
+{
+	int	index;
 
 	index = 0;
-	total = 0;
-	while (s[index])
+	while (index < counter)
 	{
-		while (s[index] && s[index] == c)
-			index++;
-		while (s[index] && s[index] != c)
-		{
-			index++;
-		}
-		if (s[index])
-			total++;
+		free(result[index]);
+		index++;
 	}
-	return (total);
+	free(result);
+	return (NULL);
 }
 
-char 	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int index;
-	int counter;
-	int start;
-	int end;
-	char **result;
+	int		counter;
+	int		start;
+	int		end;
+	char	**result;
 
 	result = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
-	index = 0;
+	if (!result)
+		return (NULL);
 	counter = 0;
-	while (s[index])
+	start = 0;
+	while (s[start])
 	{
-		while (s[index] && s[index] == c)
-			index++;
-		start = index;
-		while (s[index] && s[index] != c)
-		{
-			index++;
-		}
-		end = index;
-		result[counter++] = malloca(s, start, end - start);
+		start = find_start(s, c, start);
+		end = find_end(s, c, start);
+		if (!s[start])
+			break ;
+		result[counter] = ft_substr(s, start, end - start);
+		if (!result[counter])
+			return (free_all(result, counter));
+		start = end;
+		counter++;
 	}
-	for (int i = 0; i < count_words(s, c); i++)
-	{
-		printf("%s\n", result[i]);
-	}
+	result[counter] = NULL;
 	return (result);
-}
-
-int main(void)
-{
-	/* ft_split("    Um caderno branco   ", ' '); */
-	// ft_split("  tripouille  42  ", ' ');
-	ft_split("     ", ' ');
 }

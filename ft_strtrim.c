@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:42:49 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/20 17:13:09 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/21 13:05:14 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char 	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t index;
-	size_t length;
+	size_t	index;
+	size_t	length;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -26,14 +26,14 @@ char 	*ft_strtrim(char const *s1, char const *set)
 	while (s1[index])
 	{
 		if (!ft_strchr(set, s1[index]))
-			break;
+			break ;
 		index++;
 	}
 	while (length > 0)
 	{
 		if (!ft_strchr(set, s1[length]))
-			break;
-		length--;
+			break ;
+		length-- ;
 	}
 	return (ft_substr(s1, index, length - index + 1));
 }
