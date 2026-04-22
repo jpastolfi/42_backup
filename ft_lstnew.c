@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/15 17:41:29 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/22 11:42:16 by jastolfi         ###   ########.fr       */
+/*   Created: 2026/04/22 12:22:20 by jastolfi          #+#    #+#             */
+/*   Updated: 2026/04/22 14:14:45 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	int	index;
+	t_list	*result;
 
-	index = 0;
-	while (s[index])
-	{
-		write(fd, &s[index], 1);
-		index++;
-	}
+	result = malloc(sizeof(t_list));
+	if (!result)
+		return (NULL);
+	result->content = content;
+	result->next = NULL;
+	return (result);
 }
 
 /* int main(void)
 {
-	ft_putstr_fd("Batata", 1);	// prints to stdout
-	ft_putstr_fd("\n", 1);	// prints to stdout
-	ft_putstr_fd("Tomate", 2);	// prints to stderr
-	ft_putstr_fd("\n", 2);	// prints to stdout
+	t_list *st = ft_lstnew("42 Lisboa");
+	printf("%s\n", (char *)st->content);
+	printf("Is next NULL? %s\n", st->next == NULL ? "Yes" : "Nope");
 } */

@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 19:28:10 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/21 19:40:16 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/22 10:48:33 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,58 +15,55 @@
 #include <stdlib.h>
 #include <limits.h>
 
-static int count_digits(int number)
+static int	count_digits(int number)
 {
-	int counter;
+	int		counter;
+	long	n;
 
-	counter = 0;
-	if (number < 0)
+	counter = (number < 0);
+	n = (long)number;
+	if (n < 0)
+		n = -n;
+	while (n > 9)
 	{
-		counter++;
-		number *= -1;
-	}
-	while (number > 9)
-	{
-		number /= 10;
+		n /= 10;
 		counter++;
 	}
 	return (counter + 1);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *result;
-	int digits;
-	int index;
-	int next;
-	int start;
+	char	*result;
+	int		digits;
+	int		index;
+	int		next;
+	int		start;
 
 	digits = count_digits(n);
 	result = malloc(digits + 1);
 	if (!result)
 		return (NULL);
-	index = 0;
-	if (n < 0)
-	{
+	index = (n < 0);
+	if (index)
 		result[0] = '-';
-		index = 1;
-	}
 	start = digits - 1;
 	while (index <= start)
 	{
-		next = (n % 10);
+		next = n % 10;
 		if (next < 0)
-			next *= -1;
-		result[start] = (next + '0');
+			next = -next;
+		result[start--] = next + '0';
 		n /= 10;
-		start--;
 	}
 	result[digits] = '\0';
 	return (result);
 }
 
-int main(void)
+/* int	main(void)
 {
 	printf("%s\n", ft_itoa(123));
-	// printf("digits: %d\n", count_digits(-1234));
-}
+	printf("%s\n", ft_itoa(-123));
+	printf("%s\n", ft_itoa(INT_MAX));
+	printf("%s\n", ft_itoa(INT_MIN));
+} */
