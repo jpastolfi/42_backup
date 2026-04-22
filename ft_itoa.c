@@ -21,7 +21,10 @@ static int count_digits(int number)
 
 	counter = 0;
 	if (number < 0)
+	{
 		counter++;
+		number *= -1;
+	}
 	while (number > 9)
 	{
 		number /= 10;
@@ -30,57 +33,33 @@ static int count_digits(int number)
 	return (counter + 1);
 }
 
-/* static char *invert_string(char *string)
+char *ft_itoa(int n)
 {
-	int len;
-	int index;
 	char *result;
+	int digits;
+	int index;
+	int next;
+	int start;
 
-	index = 0;
-	len = ft_strlen(string);
-	result = malloc(sizeof(char) * len);
-	if (!result)
-		return (NULL);
-	while (index < len)
-	{
-		result[index] = string[len - index];
-		index++;
-	}
-	return (result);
-} */
-
-char	*ft_itoa(int n)
-{
-	char	*result;
-	int 	digits;
-	int 	i;
-	int		next;
-
-	if (n > INT_MAX || n < INT_MIN)
-		return (NULL);
 	digits = count_digits(n);
 	result = malloc(digits + 1);
 	if (!result)
 		return (NULL);
-	i = 0;
+	index = 0;
 	if (n < 0)
 	{
-		i++;
 		result[0] = '-';
+		index = 1;
 	}
-	printf("%d\n", digits); // -123
-	while (i < digits - 1)
+	start = digits - 1;
+	while (index <= start)
 	{
-		printf("BABADO");
-		/* printf("counter: %d\n", i);
-		printf("digits: %d\n", digits);
-		printf("digits - counter: %d\n", digits - i); */
 		next = (n % 10);
 		if (next < 0)
 			next *= -1;
-		result[digits - i] = (next + '0');
+		result[start] = (next + '0');
 		n /= 10;
-		i++;
+		start--;
 	}
 	result[digits] = '\0';
 	return (result);
@@ -88,6 +67,6 @@ char	*ft_itoa(int n)
 
 int main(void)
 {
-	printf("%s\n", ft_itoa(-123));
+	printf("%s\n", ft_itoa(123));
 	// printf("digits: %d\n", count_digits(-1234));
 }
