@@ -16,20 +16,17 @@
 int ft_lstsize(t_list *lst)
 {
 	int counter;
-	t_list *next;
 
 	counter = 0;
-	next = lst->next;
-	/* while(next)
+	while (lst)
 	{
-		next = lst->next;
-		printf("Content: %s\n", (char *)lst->content);
+		lst = lst->next;
 		counter++;
-	} */
+	}
 	return (counter);
 }
 
-int main(void)
+/* int main(void)
 {
 	t_list *first = ft_lstnew("first");
 	t_list *second = ft_lstnew("second");
@@ -51,4 +48,5 @@ int main(void)
 	printf("fourth->content: %s\n", (char *)fourth->content);
 	printf("fourth->next: %p\n", fourth->next);
 	printf("Length: %d\n", ft_lstsize(first));
-}
+	printf("Length of NULL: %d\n", ft_lstsize(first));
+} */
