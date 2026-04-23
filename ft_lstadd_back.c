@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:23:05 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/23 14:35:08 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:35:14 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,20 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *node;
 
-	if (!lst || !(*lst))
+	if (!lst)
 		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
 	node = *lst;
 	while (node->next)
 	{
-		node=node->next;
+		node = node->next;
 	}
 	node->next = new;
+
 }
 
 /* int main(void)
