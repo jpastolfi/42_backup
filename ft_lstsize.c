@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:23:28 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/22 17:10:25 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/23 10:57:07 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,17 @@
 int ft_lstsize(t_list *lst)
 {
 	int counter;
-	t_list *next;
 
 	counter = 0;
-	next = lst->next;
-	/* while(next)
+	while(lst)
 	{
-		next = lst->next;
-		printf("Content: %s\n", (char *)lst->content);
 		counter++;
-	} */
+		lst = lst->next;
+	}
 	return (counter);
 }
 
-int main(void)
+/* int main(void)
 {
 	t_list *first = ft_lstnew("first");
 	t_list *second = ft_lstnew("second");
@@ -51,4 +48,7 @@ int main(void)
 	printf("fourth->content: %s\n", (char *)fourth->content);
 	printf("fourth->next: %p\n", fourth->next);
 	printf("Length: %d\n", ft_lstsize(first));
-}
+	t_list *fifth = ft_lstnew("fifth");
+	ft_lstadd_front(&first, fifth);
+	printf("Length: %d\n", ft_lstsize(first));
+} */
