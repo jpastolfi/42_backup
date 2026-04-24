@@ -6,19 +6,19 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:23:28 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/23 10:57:07 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:07:02 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
-	while(lst)
+	while (lst)
 	{
 		counter++;
 		lst = lst->next;

@@ -6,14 +6,14 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:23:23 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/23 14:30:15 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:05:17 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
