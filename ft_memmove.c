@@ -6,7 +6,7 @@
 /*   By: jastolfi <jastolfi@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 16:55:27 by jastolfi          #+#    #+#             */
-/*   Updated: 2026/04/17 14:38:15 by jastolfi         ###   ########.fr       */
+/*   Updated: 2026/04/24 18:12:20 by jastolfi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*dest_ptr;
 	unsigned char	*src_ptr;
 
+	if (!dest && !src)
+		return (NULL);
 	index = 0;
 	dest_ptr = (unsigned char *) dest;
 	src_ptr = (unsigned char *) src;
 	if (dest_ptr < src_ptr)
 	{
-		while (index < n)
-		{
-			dest_ptr[index] = src_ptr[index];
-			index++;
-		}
+		ft_memcpy(dest, src, n);
 	}
 	else
 	{
@@ -44,8 +42,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 /* int main(void)
 {
-	char *dest = "Batata";
-	char *src = "Tomate";
+	char dest[] = "Batata";
+	char src[] = "Tomate";
 	printf("dest before: %s\n", dest);
 	printf("src before: %s\n", src);
+	ft_memmove(dest, src, 3);
+	printf("dest after: %s\n", dest);
+	printf("src after: %s\n", src);
 } */
