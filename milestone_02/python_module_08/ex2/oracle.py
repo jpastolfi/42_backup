@@ -18,7 +18,7 @@ if __name__ == "__main__":
     is_missing: bool = False
     for item in env_vars.items():
         key, value = item
-        if key == "MATRIX_MODE" and key not in messages.keys():
+        if key == "MATRIX_MODE" and value not in messages.keys():
             is_missing = True
             print("MATRIX_MODE not recognized")
         if value is None:
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
 Configuration loaded:
 Mode: {env_vars.get('MATRIX_MODE')}
-Database: {"Connected to local instance"}
+Database: Connected to local instance
 API Access: Authenticated
 Log Level: {env_vars.get('LOG_LEVEL')}
 Zion Network: Online
