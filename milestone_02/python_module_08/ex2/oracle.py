@@ -1,7 +1,6 @@
-try:
-    import os
-    import sys
-    from dotenv import load_dotenv
+import os
+import sys
+from dotenv import load_dotenv
 
 if __name__ == "__main__":
     load_dotenv(override=False)
@@ -26,14 +25,14 @@ if __name__ == "__main__":
             is_missing = True
             print(f"Environment variable {key} not found")
 
-        if is_missing:
-            sys.exit(1)
-        print(f"""ORACLE STATUS: Reading the Matrix...
+    if is_missing:
+        sys.exit(1)
+    print(f"""ORACLE STATUS: Reading the Matrix...
 
 Configuration loaded:
 Mode: {env_vars.get('MATRIX_MODE')}
-Database: Connected to local instance
-API Access: Authenticated
+Database: {env_vars.get('DATABASE_URL')}
+API Access: {env_vars.get('API_KEY')}
 Log Level: {env_vars.get('LOG_LEVEL')}
 Zion Network: {env_vars.get('ZION_ENDPOINT')}
 
@@ -45,11 +44,8 @@ Environment security check:
 The Oracle sees all configurations.
 """)
 
-        if env_vars.get('MATRIX_MODE') in messages.keys():
-            print(
-                f"Remember you are in {env_vars.get('MATRIX_MODE')} mode: "
-                f"{messages.get(env_vars.get('MATRIX_MODE'))}"
-                )
-
-except ModuleNotFoundError as e:
-    print(e)
+    if env_vars.get('MATRIX_MODE') in messages.keys():
+        print(
+            f"Remember you are in {env_vars.get('MATRIX_MODE')} mode: "
+            f"{messages.get(env_vars.get('MATRIX_MODE'))}"
+            )
