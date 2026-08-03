@@ -60,28 +60,31 @@ class AlienContact(BaseModel):
 
 
 def main():
-    contact = AlienContact(
-        contact_id="AC-001/2026",
-        timestamp=datetime.now(),
-        location="Lisboa",
-        contact_type=ContactType.radio,
-        signal_strength=round(uniform(0.0, 10.0), 2),
-        duration_minutes=randint(1, 1440),
-        witness_count=randint(1, 100),
-        message_received="Take me to your leader",
-        is_verified=True
-    )
-    print("Alien Contact Log Validation")
-    print("======================================")
-    print(f"ID: {contact.contact_id}")
-    print(f"Type: {contact.contact_type.name}")
-    print(f"Location: {contact.location}")
-    print(f"Signal: {contact.signal_strength}/10")
-    print(f"Duration: {contact.duration_minutes} minutes")
-    print(f"Witnesses: {contact.witness_count}")
-    if contact.message_received is not None:
-        print(f"Message: '{contact.message_received}'")
-    print("======================================")
+    try:
+        contact = AlienContact(
+            contact_id="AC-001/2026",
+            timestamp=datetime.now(),
+            location="Lisboa",
+            contact_type=ContactType.radio,
+            signal_strength=round(uniform(0.0, 10.0), 2),
+            duration_minutes=randint(1, 1440),
+            witness_count=randint(1, 100),
+            message_received="Take me to your leader",
+            is_verified=True
+        )
+        print("Alien Contact Log Validation")
+        print("======================================")
+        print(f"ID: {contact.contact_id}")
+        print(f"Type: {contact.contact_type.name}")
+        print(f"Location: {contact.location}")
+        print(f"Signal: {contact.signal_strength}/10")
+        print(f"Duration: {contact.duration_minutes} minutes")
+        print(f"Witnesses: {contact.witness_count}")
+        if contact.message_received is not None:
+            print(f"Message: '{contact.message_received}'")
+        print("======================================")
+    except AttributeError:
+        print("Invalid contact type")
 
     try:
         invalid_contact = AlienContact(
@@ -98,6 +101,8 @@ def main():
     except ValidationError as e:
         for item in e.errors():
             print(f"Error: {item['msg']}")
+    except AttributeError:
+        print("Invalid contact type")
 
     try:
         invalid_contact = AlienContact(
@@ -113,6 +118,8 @@ def main():
     except ValidationError as e:
         for item in e.errors():
             print(f"Error: {item['msg']}")
+    except AttributeError:
+        print("Invalid contact type")
 
     try:
         invalid_contact = AlienContact(
@@ -129,6 +136,8 @@ def main():
     except ValidationError as e:
         for item in e.errors():
             print(f"Error: {item['msg']}")
+    except AttributeError:
+        print("Invalid contact type")
 
     try:
         invalid_contact = AlienContact(
@@ -145,6 +154,8 @@ def main():
     except ValidationError as e:
         for item in e.errors():
             print(f"Error: {item['msg']}")
+    except AttributeError:
+        print("Invalid contact type")
 
 
 if __name__ == "__main__":

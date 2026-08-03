@@ -10,6 +10,8 @@ class SpaceStation(BaseModel):
     power_level: float = Field(ge=0.0, le=100.0)
     oxygen_level: float = Field(ge=0.0, le=100.0)
     last_maintenance: datetime
+    # YYYY-MM-DD[T]HH:MM[:SS[.ffffff]][Z or [±]HH[:]MM]
+    # int or float as a string
     is_operational: bool = True
     notes: str | None = Field(default=None, max_length=200)
 
@@ -23,6 +25,7 @@ def main():
             power_level=25.0,
             oxygen_level=50.0,
             last_maintenance=date(2023, 3, 1),
+            # last_maintenance="2023-03-01",
         )
         print("Space Station Data Validation")
         print("=============================================")

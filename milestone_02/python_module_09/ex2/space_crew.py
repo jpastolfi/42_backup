@@ -48,7 +48,7 @@ class SpaceMission(BaseModel):
             if member.rank == Rank.captain or member.rank == Rank.commander:
                 return self
         raise ValueError(
-            "Must have at least one Commander or Captain"
+            "Mission must have at least one Commander or Captain"
         )
 
     @model_validator(mode="after")
@@ -144,7 +144,18 @@ def main():
             mission_status="planned",
             budget_millions=8750.5
         )
-        print("Valid mission created:", mission.mission_id)
+        print("Valid mission created:")
+        for item in mission.model_dump().items():
+            key, value = item
+            if (key == "crew"):
+                print(f"{key}:")
+                for member in value:
+                    print(
+                        f"{member['name']} ({member['rank'].name})",
+                        f" - {member['specialization']}")
+                    # print(f"{member['name']}: {member['specialization']}")
+            else:
+                print(f"{key}: {value}")
     except ValidationError as e:
         print("Failure on valid mission:", e.errors()[0]["msg"])
 
@@ -162,7 +173,7 @@ def main():
         )
         print("ERROR: mission with bad id should have failed")
     except ValidationError as e:
-        print("OK - mission_id_validator caught it:", e.errors()[0]["msg"])
+        print("Mission_id_validator:", e.errors()[0]["msg"])
 
     # --- commander_or_captain_validator: no captain/commander -----------
     crew_no_leadership = [
@@ -186,7 +197,7 @@ def main():
         )
         print("ERROR: mission with no captain/commander should have failed")
     except ValidationError as e:
-        print("OK - commander_or_captain_validator caught it:",
+        print("Commander_or_captain_validator:",
               e.errors()[0]["msg"])
 
     # --- mission_duration_validator: long mission, not enough experience --
@@ -214,7 +225,7 @@ def main():
         )
         print("ERROR: long mission with junior crew should have failed")
     except (ValidationError, UnboundLocalError) as e:
-        print("OK - mission_duration_validator caught it:",
+        print("Mission_duration_validator:",
               e.errors()[0]["msg"])
 
     # --- active_crew_validator: one inactive member ----------------------
@@ -239,7 +250,7 @@ def main():
         )
         print("ERROR: mission with inactive crew member should have failed")
     except ValidationError as e:
-        print("OK - active_crew_validator caught it:", e.errors()[0]["msg"])
+        print("Active_crew_validator:", e.errors()[0]["msg"])
     except Exception as e:
         print(e)
 
